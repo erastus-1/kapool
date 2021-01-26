@@ -12,7 +12,7 @@ def home(request):
     date = dt.date.today()
     projects = Projects.objects.all()
 
-    return render(request,'all/home.html',locals())
+    return render(request,'/',locals())
 
 @login_required(login_url='/accounts/login/')
 def profile_info(request):
@@ -30,7 +30,7 @@ def profile_update(request):
             add=form.save(commit=False)
             add.user = current_user
             add.save()
-        return redirect('profile')
+        return redirect('/')
 
     else: 
         form = UpdateForm()
