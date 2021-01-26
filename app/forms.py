@@ -15,9 +15,9 @@ from .models import *
 
 #     class Meta:
 #         model = AbstractUser
-#         fields = ['email', 'location', 'contact']
+#         fields = ['user', 'bio', 'email', 'image', 'contact', 'location'] 
 
 # class UpdateForm(forms.ModelForm):
 #     class Meta:
 #         model = Profile
-#         fields = ['user', 'bio', 'image', 'contact', 'location'] 
+#         fields = ['user', 'bio', 'email', 'image', 'contact', 'location'] 
