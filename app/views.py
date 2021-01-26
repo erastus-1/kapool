@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
-    projects = Projects.objects.all()
+    drivers = Drivers.objects.all()
 
     return render(request,'/',locals())
 
