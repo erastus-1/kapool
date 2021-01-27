@@ -36,17 +36,5 @@ def profile_update(request):
         form = UpdateForm()
     return render(request, '/',{'form':form})
 
-@login_required(login_url='/accounts/login/')
-def search(request):
-    profiles = User.objects.all()
-
-    if 'username' in request.GET and request.GET['username']:
-        search_term = request.GET.get('username')
-        results = User.objects.filter(username__icontains=search_term)
-        message = f'{search_term}'
-        profile_pic = User.objects.all()
-
-        return render(request,'/',locals())
-
-    return redirect('/')
-
+def about(request):
+    return render(request, '/')

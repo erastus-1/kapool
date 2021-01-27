@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app',
+    'userapp',
     'bootstrap4',
     'tinymce',
     'django.contrib.admin',
