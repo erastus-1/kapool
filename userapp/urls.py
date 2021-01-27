@@ -12,7 +12,6 @@ urlpatterns=[
     url('user/destination',views.destination, name = 'destination'),
     url('user/contact',views.contact, name = 'contact'),
     url('about',views.about, name = 'about'),
-    url('logout',views.logout,name ='logout'),
 ]
 
 if settings.DEBUG:
