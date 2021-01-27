@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
-from django.conf import settings
-from django.http import HttpResponse
-from django.conf.urls.static import static
-from . import models
-from django.contrib.auth.models import User
+from .models import *
+from django.shortcuts import render,redirect
+from django.http  import HttpResponse,Http404
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -12,7 +11,7 @@ def home(request):
     date = dt.date.today()
 
     return render(request,'base.html',locals())
-    
+
 
 @login_required(login_url='/accounts/login/')
 def profile_info(request):

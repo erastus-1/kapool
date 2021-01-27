@@ -5,11 +5,15 @@ from . import views
 
 urlpatterns=[
 
-    path('login',views.login,name ='login'),
-    path('',views.landing,name = 'landing'),
-    path('user/profile',views.pprofile, name = 'profile'),
-    path('user/destination',views.pdestination, name = 'destination'),
-    path('user/contact',views.pcontact, name = 'contact'),
-    path('about',views.about, name = 'about'),
-    path('logout',views.logout,name ='logout'),
+    url('login',views.login,name ='login'),
+    url('',views.landing,name = 'landing'),
+    url('user/profile',views.pprofile, name = 'profile'),
+    url('update/',views.profile_update, name='update'),
+    url('user/destination',views.pdestination, name = 'destination'),
+    url('user/contact',views.pcontact, name = 'contact'),
+    url('about',views.about, name = 'about'),
+    url('logout',views.logout,name ='logout'),
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
