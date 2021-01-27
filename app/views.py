@@ -9,9 +9,8 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
-    # drivers = Drivers.objects.all()
 
-    return render(request,'base.html',locals())
+    return render(request,'main/index.html',locals())
 
 @login_required(login_url='/accounts/login/')
 def profile_info(request):
@@ -36,4 +35,11 @@ def profile_update(request):
     return render(request, '/',{'form':form})
 
 def about(request):
+    return render(request, '/')
+
+def destination(request):
+    return render(request, '/')
+
+
+def contact(request):
     return render(request, '/')

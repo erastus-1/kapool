@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     date = dt.date.today()
 
-    return render(request,'base.html',locals())
+    return render(request,'main/index.html',locals())
 
 
 @login_required(login_url='/accounts/login/')
