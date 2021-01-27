@@ -4,5 +4,3 @@ from django.utils import timezone
 from django.db import models
 import datetime as dt
 import cloudinary
-
-# Create your models here.

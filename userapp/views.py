@@ -6,15 +6,23 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+def login(request):
+    return render(request, '/')
+
+def logout(request):
+        logout(request)
+        return redirect(request, '/')
+
+
 @login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
 
-    return render(request,'main/index.html',locals())
+    return render(request,'base.html',locals())
 
 
 @login_required(login_url='/accounts/login/')
-def profile_info(request):
+def profile(request):
     current_user = request.user
     profile = Profile.objects.filter(user=current_user).first()
 
