@@ -19,7 +19,7 @@ def logout(request):
 def home(request):
     date = dt.date.today()
 
-    return render(request,'base.html',locals())
+    return render(request, 'index.html',locals())
 
 @login_required(login_url='/accounts/login/')
 def profile_info(request):
