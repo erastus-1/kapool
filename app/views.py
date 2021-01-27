@@ -10,9 +10,9 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
-    drivers = Drivers.objects.all()
+    # drivers = Drivers.objects.all()
 
-    return render(request,'/',locals())
+    return render(request,'base.html',locals())
 
 @login_required(login_url='/accounts/login/')
 def profile_info(request):
