@@ -9,13 +9,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class LoginView(auth_views.LoginView):
-    """Login view"""
     template_name = 'registration/login.html'
     redirect_authenticated_user = True
 
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
-    """Logout View."""
-
+   '''logout view'''
 
 def home(request):
     date = dt.date.today()
@@ -36,25 +34,21 @@ def profile_update(request):
             add=form.save(commit=False)
             add.user = current_user
             add.save()
-        return redirect('user/update.html')
+        return redirect('driver/home.html')
 
     else: 
         form = UpdateForm()
     return render(request, '/',{'form':form})
 
 
-@login_required(login_url='/accounts/login/')
-def destination(request):
-    return render(request, '/')
-
-
-@login_required(login_url='/accounts/login/')
-def contact(request):
-    return render(request, '/')
-
-
-@login_required(login_url='/accounts/login/')
 def about(request):
-    return render(request, '/')
+    return render(request, 'app/about.html')
+
+def destination(request):
+    return render(request, 'driver/destination.html')
+
+
+def contact(request):
+    return render(request, 'driver/contact')
 
 

@@ -1,72 +1,26 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% load static%}
 
+
 {% block content %}
-  <div class="container">
-      <div class="drivertop">
+{% include "navbar.html" %}
 
-          <div class="homestart">          
-          
-              <img class="img-responsive" src=url(/static/img/b.jpeg); alt="">
-          
-              <div class="homestartheader">
-          
-                  <h1>
-                      <strong>Always the ride you want</h1>
-                  </strong>
-                  <h2>The best way to get wherever you're going</h2>
-          
-          
-                  <div class="homestartcolumn ">
-                      <h3>Easiest way around</h3>
-                      <p>One tap and a car comes directly to you. Hop in—your driver knows exactly where to go. And when you get there,
-                          just step out. Payment is completely seamless...</p>
-                  </div>
-                  <div class="homestartcolumn">
-                      <h3>Anywhere, anytime</h3>
-                      <p>Daily commute. Errand across town. Early morning flight. Late night drinks. Wherever you’re headed, count on
-                          Uber for a ride—no reservations required...</p>
-                  </div>
-                  <div class="homestartcolumn">
-                      <h3>Low-cost to luxury</h3>
-                      <p>Economy cars at everyday prices are always available. For special occasions, no occasion at all, or when you
-                          just a need a bit more room, call a black car or SUV...</p>
-                  </div>          
-              </div>
-          </div>
-      </div>
-      
-          <div class="row">
-              <div class="homestartheader"><h1 style="display: inline-block;">Pick A Destination</h1></div>
-          </div>
-
-      <div id="container">
-          <div class="homestartmapper">
-              <div class="mapwelcome">              
-                  <img src="/static/img/taxi.jpeg" style="height: 300px;width: 410px;margin-top: 80%;z-index: 20;" alt="">              
-              </div>              
-              <div id="mapinput">              
-                  <input id="origin-input" class="controls" style="margin-top: 5%;margin-left: 2%;height: 27px;width: 200px;" type="text" placeholder="Enter an origin location">              
-                  <input id="destination-input" class="controls" style="margin-top: 10%;margin-left: -25%;height: 27px;width: 200px;" type="text"
-                      placeholder="Enter a destination location">              
-              </div>              
-              <div id="mode-selector" class="controls">
-                  <input type="radio" name="type" id="changemode-walking" checked="checked">
-                  <label for="changemode-walking">Bike</label>
-                  <input type="radio" name="type" id="changemode-transit">
-                  <label for="changemode-transit">Transit</label>
-                  <input type="radio" name="type" id="changemode-driving">
-                  <label for="changemode-driving">Driving</label>
-              </div>
-              <div id="map"></div>
-              
-              <script src="{% static '/js/script.js' %}">
-                 
-              </script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrdUUuAf6IUCu5TojkPfccO_RNhxCwy8I&libraries=places,geometry&callback=initMap"
-                  async="async" defer="defer"></script>
-          </div>
-      </div>  
-  </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <img class="rounded-circle account-profile " src="{{ user.profile.image.url }}" alt="user" height="200px"
+                width="200px">
+            <div class="media-container">
+                <h2 class="account-header">Name: {{user.username}}</h2>
+                <p class="text-info">Email: {{user.email}}</p>
+            </div>
+            <p class="ml-3">Bio: {{user.profile.bio}}</p>
+            <a class="btn btn-info" href="{% url 'update' %}">Update Profile</a>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
+
+

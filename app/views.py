@@ -30,7 +30,7 @@ def profile_update(request):
 
     else: 
         form = UpdateForm()
-    return render(request, 'driver/update_profile.html',{'form':form})
+    return render(request, 'driver/home.html',{'form':form})
 
 def about(request):
     return render(request, 'app/about.html')
