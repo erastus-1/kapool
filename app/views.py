@@ -7,24 +7,17 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-
-def login(request):
-    return render(request, 'registration/login.html')
-
-
-@login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
 
     return render(request, 'index.html',locals())
 
-@login_required(login_url='/accounts/login/')
+
 def profile_info(request):
     current_user = request.user
 
     return render(request, 'driver/profile.html',locals())
 
-@login_required(login_url='/accounts/login/')
 def profile_update(request):
     current_user = request.user
     if request.method == 'POST':

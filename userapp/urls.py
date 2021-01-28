@@ -6,7 +6,6 @@ from . import views
 urlpatterns=[
 
     url('',views.home,name = 'home'),
-    url('login',views.login,name ='login'),
     url('user/profile',views.profile, name = 'profile'),
     url('update/',views.profile_update, name='update'),
     url('user/destination',views.destination, name = 'destination'),

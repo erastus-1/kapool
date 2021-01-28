@@ -5,7 +5,6 @@ from . import views
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),
-    url('login',views.login,name ='login'),
     url('driver/profile',views.profile_info, name='profile'),
     url('update/',views.profile_update, name='update'),
     url('driver/destination',views.destination, name = 'destination'),
