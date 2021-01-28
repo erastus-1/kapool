@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="font-family: 'Pacifico', cursive; font-size:30px;">
                 <ul class="nav navbar-nav navbar-right">
                   {% if user.is_authenticated %}
-                  <li> <a style="color: black;" class="nav-item nav-link" href="/"></a>
+                  <li> <a style="color: black;" class="nav-item nav-link" href="/">Home</a>
                   </li>
                   <hr>
                   <li>
@@ -19,9 +19,9 @@
                   </li>
                   <hr>
                   <li>
-                    <a style="color: blue;" class="nav-item nav-link" href="{% url 'logout' %}?next={% url 'login' %}">Logout</a>
+                    <a style="color: blue;" class="nav-item nav-link" href="/logout">Logout</a>
                     {% else %}
-                    <a style="color: blue;" class="nav-item nav-link" href="/">Login</a>
+                    <a style="color: blue;" class="nav-item nav-link" href="/accounts/login/">Login</a>
                     {% endif %}
                   </li>
                 </ul>

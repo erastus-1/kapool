@@ -25,6 +25,6 @@ urlpatterns = [
     path('',include('userapp.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('accounts/', include('django_registration.backends.one_step.urls')), 
-    # path('accounts/login/', views.LoginView.as_view(template_name='registration/login.html')),
-    # path('accounts/logout/', views.logout_then_login, {"next_page": '/'}), 
+    path('accounts/login/', views.LoginView.as_view(template_name='registration/login.html')),
+    path('accounts/logout/', views.LogoutView.as_view(next_page='/')),
 ]

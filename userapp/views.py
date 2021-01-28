@@ -4,16 +4,25 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
+class LoginView(auth_views.LoginView):
+    """Login view"""
+    template_name = 'registration/login.html'
+    redirect_authenticated_user = True
+
+class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
+    """Logout View."""
+
+
 def home(request):
     date = dt.date.today()
 
     return render(request, 'index.html',locals())
 
 
-@login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
 
