@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-2 border-black rounded-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-2 border-dark rounded-0">
         <div class="container-fluid">
             <a href="/">
                 <i class="fa fa-taxi" style="font-size:48px;color:blue"alt="" width="15%"></i>
@@ -10,9 +10,13 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="font-family: 'Pacifico', cursive; font-size:30px;">
                 <ul class="nav navbar-nav navbar-right">
                   {% if user.is_authenticated %}
-                  <li> <a style="color: black;" class="nav-item nav-link" href="/">Home</a>
+                  <li> <a style="color: blue;" class="nav-item nav-link" href="/">Home</a>
                   </li>
                   <hr>
+                  <li>
+                    <a class="nav-link open-nav" href=" {% url 'home' %}"><i class="fa fa-user"
+                        style="font-size:30px;color:blue">{{user}}</i></a>
+                  </li>
                   <li>
                     <a style="color: blue;" class="nav-item nav-link" href="/logout">Logout</a>
                     {% else %}

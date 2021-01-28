@@ -1,4 +1,3 @@
-from location_field.models.plain import PlainLocationField
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User 
 from tinymce.models import HTMLField
