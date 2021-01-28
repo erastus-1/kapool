@@ -26,18 +26,18 @@ def profile_update(request):
             add=form.save(commit=False)
             add.user = current_user
             add.save()
-        return redirect('user/update.html')
+        return redirect('home')
 
     else: 
         form = UpdateForm()
-    return render(request, '/',{'form':form})
+    return render(request, 'driver/update_profile.html',{'form':form})
 
 def about(request):
-    return render(request, '/')
+    return render(request, 'app/about.html')
 
 def destination(request):
-    return render(request, '/')
+    return render(request, 'driver/destination.html')
 
 
 def contact(request):
-    return render(request, '/')
+    return render(request, 'driver/contact')
