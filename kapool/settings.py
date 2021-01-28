@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'kapool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'karpool',
-        'USER': 'erastus',
-        'PASSWORD':'Angular2020',
+        'NAME': 'cars',
+        'USER': 'user',
+        'PASSWORD':'pih888',
             }
 }
 
@@ -144,3 +144,4 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
