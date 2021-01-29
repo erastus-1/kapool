@@ -36,9 +36,9 @@ class Location (models.Model):
 
 class Car(models.Model):
 
-    brand = models.CharField(max_length=50)
-    number_plate = models.CharField(max_length=20)
-    seat_number = models.CharField(max_length=20)
+    brand = HTMLField(blank=True)
+    number_plate = HTMLField(blank=True)
+    seat_number = HTMLField(blank=True)
 
 
     def __str__(self):
@@ -46,8 +46,8 @@ class Car(models.Model):
 
 class Category(models.Model):
 
-    pickup_location = models.CharField(max_length=20)
-    arrival_destination = models.CharField(max_length=20)
+    pickup_location = HTMLField(blank=True)
+    arrival_destination = HTMLField(blank=True)
 
 
     def __str__(self):

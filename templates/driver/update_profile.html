@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load bootstrap4 %} {% load static%}
+{% extends 'driver/base.html' %} {% load bootstrap4 %} {% load static%}
 
 {% block content %}
 {% include "navbar.html" %}
@@ -6,6 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <h1 style="font-weight: bolder; color: blue; padding-bottom: 20px;">Add Information</h1>
             <form action="{% url 'update' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
