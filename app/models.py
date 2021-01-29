@@ -33,7 +33,7 @@ class Location (models.Model):
 
     longitude = models.CharField(max_length=10)
     latitude = models.CharField(max_length=10)
-    location_name = models.CharField(max_length=20)
+    location_name = models.ForeignKey('app.Driver', on_delete=models.CASCADE)
     category = models.ForeignKey('app.Category', on_delete=models.CASCADE)
 
     
@@ -50,7 +50,7 @@ class Location (models.Model):
 
 class Car(models.Model):
 
-    brand = HTMLField(blank=True)
+    car_brand = HTMLField(blank=True)
     number_plate = HTMLField(blank=True)
     seat_number = HTMLField(blank=True)
 
