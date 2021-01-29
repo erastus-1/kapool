@@ -21,4 +21,11 @@ class Passenger(models.Model):
     def __str__(self):
         return self.name
 
+    def save_passenger(self):
+        self.save()
+
+    def delete_passenger(self):
+        self.delete()
+    
+
 
